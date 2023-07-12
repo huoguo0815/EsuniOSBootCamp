@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AFNetworking
+import JSONModel
 
 class SearchTableViewController: UITableViewController {
     
@@ -15,6 +17,8 @@ class SearchTableViewController: UITableViewController {
     @IBOutlet weak var searchResultsCountLabel: UILabel!
     @IBOutlet weak var mediaTypeSegmentedControl: UISegmentedControl!
     
+    let searchController = UISearchController(searchResultsController: nil)
+    
     enum MediaType:String,CaseIterable{
         case movie,music
     }
@@ -23,7 +27,6 @@ class SearchTableViewController: UITableViewController {
         super.viewDidLoad()
 
         //加上搜尋欄位
-        searchController = UISearchController(searchResultsController: nil)
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = NSLocalizedString("Search music...", comment: "Search music...")
         searchController.searchBar.backgroundImage = UIImage()
@@ -39,3 +42,5 @@ class SearchTableViewController: UITableViewController {
 
 
 }
+
+//
