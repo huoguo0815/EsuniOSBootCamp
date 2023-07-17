@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-//自訂型別
 struct SearchItem:Codable{
     var trackName:String
     var artistName:String

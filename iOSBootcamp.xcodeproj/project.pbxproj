@@ -13,9 +13,10 @@
 		7E7BCD3B2A5BB45B00AC8746 /* iOSBootcamp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD392A5BB45B00AC8746 /* iOSBootcamp.xcdatamodeld */; };
 		7E7BCD3D2A5BB45C00AC8746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BCD3C2A5BB45C00AC8746 /* Assets.xcassets */; };
 		7E7BCD402A5BB45C00AC8746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BCD3E2A5BB45C00AC8746 /* LaunchScreen.storyboard */; };
-		7E7BCD4C2A5BEC8000AC8746 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD4B2A5BEC8000AC8746 /* SearchTableViewController.swift */; };
 		7E7BCD4E2A5BED0500AC8746 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD4D2A5BED0500AC8746 /* SearchTableViewCell.swift */; };
 		7E7BCD502A5CF9DF00AC8746 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */; };
+		7E7BCD562A5E4A6700AC8746 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD552A5E4A6700AC8746 /* SearchViewController.swift */; };
+		7E8530F42A5FD8C700350EAE /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8530F32A5FD8C700350EAE /* SearchController.swift */; };
 		927338D42750EB072D1E624F /* Pods_iOSBootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB973E9A8CE38ABA04940B0 /* Pods_iOSBootcamp.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,9 +32,10 @@
 		7E7BCD3C2A5BB45C00AC8746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E7BCD3F2A5BB45C00AC8746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E7BCD412A5BB45C00AC8746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E7BCD4B2A5BEC8000AC8746 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		7E7BCD4D2A5BED0500AC8746 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		7E7BCD552A5E4A6700AC8746 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7E8530F32A5FD8C700350EAE /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +56,6 @@
 				3943B63B6FC8A37015A44825 /* Pods-iOSBootcamp.debug.xcconfig */,
 				29750CF7BBF12DD21CB8D82D /* Pods-iOSBootcamp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -96,8 +97,8 @@
 		7E7BCD472A5BEAA000AC8746 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7E7BCD4B2A5BEC8000AC8746 /* SearchTableViewController.swift */,
-				7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */,
+				7E8530F32A5FD8C700350EAE /* SearchController.swift */,
+				7E7BCD552A5E4A6700AC8746 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -105,6 +106,7 @@
 		7E7BCD482A5BEABC00AC8746 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -249,10 +251,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E7BCD3B2A5BB45B00AC8746 /* iOSBootcamp.xcdatamodeld in Sources */,
+				7E7BCD562A5E4A6700AC8746 /* SearchViewController.swift in Sources */,
 				7E7BCD312A5BB45B00AC8746 /* AppDelegate.swift in Sources */,
+				7E8530F42A5FD8C700350EAE /* SearchController.swift in Sources */,
 				7E7BCD502A5CF9DF00AC8746 /* SearchResponse.swift in Sources */,
 				7E7BCD332A5BB45B00AC8746 /* SceneDelegate.swift in Sources */,
-				7E7BCD4C2A5BEC8000AC8746 /* SearchTableViewController.swift in Sources */,
 				7E7BCD4E2A5BED0500AC8746 /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

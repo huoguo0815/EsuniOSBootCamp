@@ -24,48 +24,38 @@
             </objects>
             <point key="canvasLocation" x="-1236" y="-704"/>
         </scene>
-        <!--Search Table View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="5yJ-Fi-0wt">
             <objects>
-                <viewController id="MgX-tT-sMT" customClass="SearchTableViewController" customModule="iOSBootcamp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MgX-tT-sMT" customClass="SearchViewController" customModule="iOSBootcamp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fyh-7G-4fH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Yy0-EY-veq">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="-1" y="226" width="394" height="622"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="z22-Ls-MEj" userLabel="Search Results">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="50" id="Aju-cb-zI0"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="265" id="3Gv-X1-4db" customClass="SearchTableViewCell" customModule="iOSBootcamp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="393" height="265"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datacell" rowHeight="179" id="3Gv-X1-4db" customClass="SearchTableViewCell" customModule="iOSBootcamp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="394" height="179"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Gv-X1-4db" id="nzd-dn-Ohr">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="265"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="394" height="179"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="RNT-gU-c7j">
-                                                    <rect key="frame" x="20" y="11" width="353" height="243"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="RNT-gU-c7j">
+                                                    <rect key="frame" x="20" y="33" width="354" height="157"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wb8-fY-bMD">
-                                                            <rect key="frame" x="0.0" y="61.666666666666671" width="120" height="120.00000000000001"/>
+                                                            <rect key="frame" x="0.0" y="18.666666666666671" width="120" height="120.00000000000001"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="120" id="sc0-K6-rQt"/>
                                                                 <constraint firstAttribute="width" constant="120" id="y77-7z-ef0"/>
                                                             </constraints>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jKL-ms-Qrm">
-                                                            <rect key="frame" x="142" y="84.333333333333314" width="113.66666666666669" height="74.666666666666686"/>
+                                                            <rect key="frame" x="142" y="41.333333333333336" width="113.66666666666669" height="74.666666666666657"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VsV-Sk-B1W">
                                                                     <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="26.333333333333332"/>
@@ -74,13 +64,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tme-nA-Rkk">
-                                                                    <rect key="frame" x="0.0" y="31.333333333333343" width="113.66666666666667" height="20.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="31.333333333333336" width="113.66666666666667" height="20.333333333333336"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgF-j1-EBF">
-                                                                    <rect key="frame" x="0.0" y="56.666666666666671" width="113.66666666666667" height="18"/>
+                                                                    <rect key="frame" x="0.0" y="56.666666666666657" width="113.66666666666667" height="18"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -88,7 +78,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oB8-Uc-wjo">
-                                                            <rect key="frame" x="277.66666666666669" y="104.33333333333333" width="75.333333333333314" height="34.333333333333329"/>
+                                                            <rect key="frame" x="277.66666666666669" y="61.333333333333329" width="76.333333333333314" height="34.333333333333329"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="收藏"/>
                                                         </button>
@@ -112,30 +102,58 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="394" translatesAutoresizingMaskIntoConstraints="NO" id="DyB-kw-Q5m">
+                                <rect key="frame" x="20" y="183" width="373" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="scP-mj-bMp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="7GY-1w-Rhd">
+                                <rect key="frame" x="0.0" y="118" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MgX-tT-sMT" id="0Xp-tM-iWv"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yWx-3L-Rhg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yWx-3L-Rhg" firstAttribute="trailing" secondItem="DyB-kw-Q5m" secondAttribute="trailing" id="GfS-GH-M6a"/>
+                            <constraint firstItem="7GY-1w-Rhd" firstAttribute="top" secondItem="yWx-3L-Rhg" secondAttribute="top" constant="15" id="JTY-gA-3fn"/>
+                            <constraint firstItem="7GY-1w-Rhd" firstAttribute="leading" secondItem="yWx-3L-Rhg" secondAttribute="leading" id="Oyu-mQ-U0B"/>
+                            <constraint firstItem="DyB-kw-Q5m" firstAttribute="leading" secondItem="yWx-3L-Rhg" secondAttribute="leading" constant="20" id="TaR-kd-qS7"/>
+                            <constraint firstItem="7GY-1w-Rhd" firstAttribute="trailing" secondItem="yWx-3L-Rhg" secondAttribute="trailing" id="duJ-eS-N0n"/>
+                            <constraint firstItem="DyB-kw-Q5m" firstAttribute="top" secondItem="yWx-3L-Rhg" secondAttribute="top" constant="80" id="fQy-gf-HYt"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KXd-Oy-E1v">
+                    <navigationItem key="navigationItem" id="3MI-ED-rP2">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jfw-6t-ZCm">
-                            <rect key="frame" x="131" y="5.6666666666666679" width="131" height="33"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="QrA-wW-hrZ">
+                            <rect key="frame" x="141" y="6" width="111" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Music"/>
                                 <segment title="Movie"/>
                             </segments>
+                            <connections>
+                                <action selector="selectMediaType:" destination="MgX-tT-sMT" eventType="valueChanged" id="d7q-RX-bui"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
-                        <outlet property="itemListTableView" destination="Yy0-EY-veq" id="BDC-M5-Xy7"/>
-                        <outlet property="mediaTypeSegmentedControl" destination="jfw-6t-ZCm" id="MnZ-dS-b6z"/>
-                        <outlet property="searchResultsCountLabel" destination="z22-Ls-MEj" id="WDE-ty-jEF"/>
+                        <outlet property="itemListTableView" destination="Yy0-EY-veq" id="G4E-D0-DP3"/>
+                        <outlet property="mediaTypeSegmentedControl" destination="QrA-wW-hrZ" id="u41-Ai-o0O"/>
+                        <outlet property="searchItemBar" destination="7GY-1w-Rhd" id="rcx-oj-Xjc"/>
+                        <outlet property="searchResultsCountLabel" destination="DyB-kw-Q5m" id="2ol-H8-9Ph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FaX-HY-NyH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="199" y="-689"/>
+            <point key="canvasLocation" x="197.70992366412213" y="-689.43661971830988"/>
         </scene>
     </scenes>
     <resources>
