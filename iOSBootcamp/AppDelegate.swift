@@ -15,6 +15,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //自訂標籤列
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.configureWithDefaultBackground()
+        
+        UITabBar.appearance().tintColor = UIColor(named: "System Blue Color")
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        
+        // 實例化 Core Data 資料模型
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let newAppSetting = AppSetting(context: context)
+        
+        newAppSetting.darkmode = "light"
+        
         return true
     }
 

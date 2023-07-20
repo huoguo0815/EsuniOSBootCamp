@@ -12,6 +12,8 @@ import SafariServices
 
 private let reusableIdentifier = "dataCell"
 
+public var mode = "light"
+
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var itemListTableView: UITableView!
@@ -25,7 +27,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     var items = [SearchItem]()
     
-    enum MediaType:String,CaseIterable{
+    
+    
+    enum MediaType: String,CaseIterable {
         case music
         case movie
     }
@@ -35,7 +39,28 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         itemListTableView.delegate = self
         itemListTableView.dataSource = self
-
+        navigationController?.navigationBar.backgroundColor = .red
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        setNeedsStatusBarAppearanceUpdate()
+        
+        if mode == "light" {
+            
+            navigationController?.navigationBar.overrideUserInterfaceStyle = .light
+            tabBarController?.tabBar.overrideUserInterfaceStyle = .light
+            overrideUserInterfaceStyle = .light
+            setNeedsStatusBarAppearanceUpdate()
+            
+        } else if mode == "dark" {
+            
+            overrideUserInterfaceStyle = .dark
+            navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+            tabBarController?.tabBar.overrideUserInterfaceStyle = .dark
+            setNeedsStatusBarAppearanceUpdate()
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,11 +69,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "datacell", for: indexPath) as! SearchTableViewCell
-        print("cell is ready")
+        //print("cell is ready")
         configure(cell: cell, forRowAt: indexPath)
         return cell
     }
     
+    //點選進入網頁
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let trackViewUrl = items[indexPath.row].trackViewUrl
         let controller = SFSafariViewController(url: trackViewUrl)
@@ -76,7 +102,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 DispatchQueue.main.async {
                     self.items = searchResponse
                     self.searchResultsCountLabel.text = "搜尋到\(self.items.count)個結果"
-                    print("try to reload data")
+                    //print("try to reload data")
                     self.itemListTableView.reloadData()
                 }
             case .failure(let error):
@@ -90,9 +116,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     //配置cell
     func configure(cell: SearchTableViewCell, forRowAt indexPath: IndexPath) {
-        print("try to set cell")
+        //print("try to set cell")
         let itemResults = items[indexPath.row]
-        print(itemResults)
+        //print(itemResults)
+        
+        //配置文字部分
         cell.TrackNameLabel.text = itemResults.trackName
         cell.ArtistNameLabel.text = itemResults.artistName
         if itemResults.description.isEmpty {
@@ -101,6 +129,25 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.DescriptionLabel.isHidden = false
             cell.DescriptionLabel.text = itemResults.description
         }
+        
+        //配置照片
+        SearchController.shared.fetchImage(from: itemResults.artworkUrl100) { result in
+            switch result {
+            case .success(let image):
+                DispatchQueue.main.async {
+                    if indexPath == self.itemListTableView.indexPath(for: cell) {
+                        cell.CoverImageView.image = image
+                    }
+                }
+            case .failure(let error):
+                self.displayError(error, title: "\(itemResults.trackName)圖片抓取失敗")
+                DispatchQueue.main.async {
+                    cell.CoverImageView.image = UIImage(systemName: "photo")
+                }
+            }
+            
+        }
+        
     }
     
     //錯誤處理
@@ -117,7 +164,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
 }
 
-extension SearchViewController:UISearchBarDelegate{
+extension SearchViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         search()
         searchItemBar.resignFirstResponder()
