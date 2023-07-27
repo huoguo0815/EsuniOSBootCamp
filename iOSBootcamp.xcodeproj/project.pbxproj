@@ -24,9 +24,10 @@
 		7E8531022A668C6200350EAE /* ModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8531012A668C6200350EAE /* ModeTableViewCell.swift */; };
 		7E8531042A668C7900350EAE /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8531032A668C7900350EAE /* FavoriteTableViewCell.swift */; };
 		7EA6DAFD2A67851B00B72272 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DAFC2A67851B00B72272 /* PersonalViewController.swift */; };
-		7EA6DB012A68D74E00B72272 /* AppSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB002A68D74E00B72272 /* AppSetting+CoreDataProperties.swift */; };
-		7EA6DB032A68D75300B72272 /* AppSetting+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB022A68D75300B72272 /* AppSetting+CoreDataClass.swift */; };
 		7EA6DB052A691AFC00B72272 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB042A691AFC00B72272 /* NavigationController.swift */; };
+		7EA6DB0A2A6F70A600B72272 /* MusicFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB092A6F70A600B72272 /* MusicFavorite.swift */; };
+		7EA6DB0C2A6FD1FB00B72272 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */; };
+		7EA6DB0E2A72444E00B72272 /* MusicDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */; };
 		927338D42750EB072D1E624F /* Pods_iOSBootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB973E9A8CE38ABA04940B0 /* Pods_iOSBootcamp.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,9 +54,10 @@
 		7E8531012A668C6200350EAE /* ModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeTableViewCell.swift; sourceTree = "<group>"; };
 		7E8531032A668C7900350EAE /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		7EA6DAFC2A67851B00B72272 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
-		7EA6DB002A68D74E00B72272 /* AppSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppSetting+CoreDataProperties.swift"; path = "/Users/esb23471/EsuniOSBootCamp/iOSBootcamp/Model/AppSetting+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
-		7EA6DB022A68D75300B72272 /* AppSetting+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "AppSetting+CoreDataClass.swift"; path = "/Users/esb23471/EsuniOSBootCamp/iOSBootcamp/Model/AppSetting+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		7EA6DB042A691AFC00B72272 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		7EA6DB092A6F70A600B72272 /* MusicFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFavorite.swift; sourceTree = "<group>"; };
+		7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
+		7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDiffableDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,12 +119,13 @@
 		7E7BCD472A5BEAA000AC8746 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7E8530F32A5FD8C700350EAE /* SearchController.swift */,
 				7E7BCD552A5E4A6700AC8746 /* SearchViewController.swift */,
+				7E8530F32A5FD8C700350EAE /* SearchController.swift */,
 				7E8530FB2A6680FF00350EAE /* ModeViewController.swift */,
 				7E8530FD2A66811300350EAE /* FavoriteViewController.swift */,
 				7EA6DAFC2A67851B00B72272 /* PersonalViewController.swift */,
 				7EA6DB042A691AFC00B72272 /* NavigationController.swift */,
+				7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -130,9 +133,9 @@
 		7E7BCD482A5BEABC00AC8746 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7EA6DB022A68D75300B72272 /* AppSetting+CoreDataClass.swift */,
-				7EA6DB002A68D74E00B72272 /* AppSetting+CoreDataProperties.swift */,
 				7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */,
+				7EA6DB092A6F70A600B72272 /* MusicFavorite.swift */,
+				7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -284,17 +287,18 @@
 				7E7BCD3B2A5BB45B00AC8746 /* iOSBootcamp.xcdatamodeld in Sources */,
 				7E7BCD562A5E4A6700AC8746 /* SearchViewController.swift in Sources */,
 				7E7BCD312A5BB45B00AC8746 /* AppDelegate.swift in Sources */,
+				7EA6DB0E2A72444E00B72272 /* MusicDiffableDataSource.swift in Sources */,
 				7E8530FE2A66811300350EAE /* FavoriteViewController.swift in Sources */,
+				7EA6DB0A2A6F70A600B72272 /* MusicFavorite.swift in Sources */,
 				7E8530F42A5FD8C700350EAE /* SearchController.swift in Sources */,
 				7E8531002A668C4F00350EAE /* PersonalTableViewCell.swift in Sources */,
+				7EA6DB0C2A6FD1FB00B72272 /* FavoriteController.swift in Sources */,
 				7EA6DAFD2A67851B00B72272 /* PersonalViewController.swift in Sources */,
 				7E8531042A668C7900350EAE /* FavoriteTableViewCell.swift in Sources */,
 				7E7BCD502A5CF9DF00AC8746 /* SearchResponse.swift in Sources */,
 				7EA6DB052A691AFC00B72272 /* NavigationController.swift in Sources */,
 				7E7BCD332A5BB45B00AC8746 /* SceneDelegate.swift in Sources */,
 				7E8530FC2A6680FF00350EAE /* ModeViewController.swift in Sources */,
-				7EA6DB032A68D75300B72272 /* AppSetting+CoreDataClass.swift in Sources */,
-				7EA6DB012A68D74E00B72272 /* AppSetting+CoreDataProperties.swift in Sources */,
 				7E8531022A668C6200350EAE /* ModeTableViewCell.swift in Sources */,
 				7E7BCD4E2A5BED0500AC8746 /* SearchTableViewCell.swift in Sources */,
 			);

@@ -8,6 +8,7 @@
 import UIKit
 import AFNetworking
 import Foundation
+import SDWebImage
 
 class SearchController {
     
@@ -28,11 +29,14 @@ class SearchController {
             let Object = self.jsonToData(jsonDic: responseObject as! NSDictionary)
             //print("The type of responseObject is ",type(of: Object!))
             if let data = Object {
+                //print(Object!)
                 do {
                     let searchResponse = try JSONDecoder().decode(SearchResponse.self, from: data)
+                    //print(searchResponse)
                     completion(.success(searchResponse.results))
                 } catch {
                     completion(.failure(error))
+                    print(error)
                 }
             } else {
                 let error = NSError(domain: "Invalid response", code: 0, userInfo: nil)
@@ -41,16 +45,6 @@ class SearchController {
         }) { (task, error) in
             completion(.failure(error))
         }
-    }
-    
-    func fetchImage(from url:URL,completion:@escaping(Result<UIImage,Error>)->()){
-        URLSession.shared.dataTask(with: url) { (data,response,error) in
-            if let data = data,let image = UIImage(data: data) {
-                completion(.success(image))
-            }else if let error = error{
-                completion(.failure(error))
-            }
-        }.resume()
     }
     
     func jsonToData(jsonDic: NSDictionary) -> Data? {

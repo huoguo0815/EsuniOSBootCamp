@@ -7,15 +7,19 @@
 
 import Foundation
 
-struct SearchItem:Codable{
-    var trackName:String
-    var artistName:String
-    var artworkUrl100:URL
-    var trackViewUrl:URL
-    var description:String
-        
+struct SearchItem: Hashable, Codable {
+    var trackId: Int
+    var trackName: String
+    var artistName: String
+    var artworkUrl100: URL
+    var trackViewUrl: URL
+    var description: String
+    
+    
+    
+    
     //列舉所有資料，有不同的則輸入名字在rawValue
-    enum CodingKeys:String,CodingKey{
+    enum CodingKeys: String, CodingKey {
         case trackName
         case artistName
         case artworkUrl100
@@ -24,8 +28,12 @@ struct SearchItem:Codable{
     }
     
     //加入另一個enum列舉同一個資料的另一個名字
-    enum AddKeys:String,CodingKey{
+    enum AddKeys: String, CodingKey {
         case description = "longDescription"
+    }
+    
+    enum IDKeys: Int, CodingKey {
+        case trackId
     }
         
     init(from decoder: Decoder) throws {
@@ -36,16 +44,18 @@ struct SearchItem:Codable{
         self.trackViewUrl = try container.decode(URL.self, forKey: .trackViewUrl)
         
         
-        if let description = try? container.decode(String.self, forKey: .description){
+        if let description = try? container.decode(String.self, forKey: .description) {
             self.description = description
-        }else{
+        } else {
             let container = try decoder.container(keyedBy: AddKeys.self)
             self.description = (try? container.decode(String.self, forKey: .description)) ?? ""
         }
+        let IDcontainer = try decoder.container(keyedBy: IDKeys.self)
+        self.trackId = try IDcontainer.decode(Int.self, forKey: .trackId)
     }
 }
 
 //所有資料
-struct SearchResponse:Codable{
-    let results:[SearchItem]
+struct SearchResponse: Codable {
+    let results: [SearchItem]
 }

@@ -27,9 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
 
-        let newAppSetting = AppSetting(context: context)
+        //let newAppSetting = AppSetting(context: context)
         
-        newAppSetting.darkmode = "light"
+        //newAppSetting.darkmode = "light"
         
         return true
     }

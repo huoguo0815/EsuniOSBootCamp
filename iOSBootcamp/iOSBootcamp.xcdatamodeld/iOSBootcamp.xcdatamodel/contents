@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="AppSetting" representedClassName=".AppSetting" syncable="YES">
-        <attribute name="darkmode" attributeType="String" defaultValueString="&quot;light&quot;"/>
+    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
+    <entity name="MusicFavorite" representedClassName=".MusicFavorite" syncable="YES">
+        <attribute name="artistName" attributeType="String"/>
+        <attribute name="artworkUrl100" optional="YES" attributeType="URI"/>
+        <attribute name="isFavorite" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="trackdescription" optional="YES" attributeType="String"/>
+        <attribute name="trackId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackName" attributeType="String"/>
     </entity>
 </model>

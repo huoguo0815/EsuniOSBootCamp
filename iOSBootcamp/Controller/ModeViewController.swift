@@ -9,7 +9,7 @@ import UIKit
 
 class ModeViewController: UIViewController {
     
-    var appsetting: AppSetting!
+    //var appsetting: AppSetting!
     
     @IBOutlet var chooseButton: UIButton!
     
@@ -21,13 +21,20 @@ class ModeViewController: UIViewController {
             
             mode = "dark"
             self.overrideUserInterfaceStyle = .dark
+            let window = UIApplication.shared.windows.first
+            
+            window?.overrideUserInterfaceStyle = .dark
             
         })
         
         let lightAction = UIAlertAction(title: "淺色模式", style: .default, handler: { (action) in
             
             mode = "light"
+            
             self.overrideUserInterfaceStyle = .light
+            let window = UIApplication.shared.windows.first
+            
+            window?.overrideUserInterfaceStyle = .light
             
         })
         
@@ -46,10 +53,22 @@ class ModeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        setNeedsStatusBarAppearanceUpdate()
+        
         if mode == "light" {
+            
+            navigationController?.navigationBar.overrideUserInterfaceStyle = .light
+            tabBarController?.tabBar.overrideUserInterfaceStyle = .light
             overrideUserInterfaceStyle = .light
+            setNeedsStatusBarAppearanceUpdate()
+            
         } else if mode == "dark" {
+            
             overrideUserInterfaceStyle = .dark
+            navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
+            tabBarController?.tabBar.overrideUserInterfaceStyle = .dark
+            setNeedsStatusBarAppearanceUpdate()
+            
         }
     }
     

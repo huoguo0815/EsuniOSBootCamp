@@ -8,5 +8,6 @@ target 'iOSBootcamp' do
   # Pods for iOSBootcamp
 	pod 'AFNetworking'
 	pod 'JSONModel'
+	pod 'SDWebImage'
 
 end

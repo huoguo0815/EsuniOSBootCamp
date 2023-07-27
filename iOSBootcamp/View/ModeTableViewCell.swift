@@ -9,8 +9,8 @@ import UIKit
 
 class ModeTableViewCell: UITableViewCell {
     
-    @IBOutlet var modeTitle: UILabel!
-    @IBOutlet var modeChoose: UILabel!
+    @IBOutlet weak var modeTitle: UILabel!
+    @IBOutlet weak var modeChoose: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
