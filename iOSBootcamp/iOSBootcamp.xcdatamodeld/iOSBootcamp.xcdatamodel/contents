@@ -6,7 +6,7 @@
         <attribute name="artworkUrl100" optional="YES" attributeType="URI"/>
         <attribute name="isFavorite" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="trackdescription" optional="YES" attributeType="String"/>
-        <attribute name="trackId" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="trackName" attributeType="String"/>
     </entity>
 </model>

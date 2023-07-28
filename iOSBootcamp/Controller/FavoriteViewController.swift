@@ -10,23 +10,48 @@ import CoreData
 import SDWebImage
 import AFNetworking
 
-class FavoriteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class FavoriteViewController: UIViewController {
     
     
     @IBOutlet weak var favoriteTableView: UITableView!
     
-    var musicFavorite: [MusicFavorite] = []
+    
     var fetchResultController: NSFetchedResultsController<MusicFavorite>!
+    lazy var dataSource = configureDataSource()
+    
+    enum Section {
+        case all
+    }
+    
+    //Core Data讀取資料
+    func fetchFavoriteData() {
+        
+        let fetchRequest: NSFetchRequest<MusicFavorite> = MusicFavorite.fetchRequest()
+        let sortDesriptor = NSSortDescriptor(key: "trackId", ascending: true)
+        fetchRequest.sortDescriptors = [sortDesriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            
+            do {
+                try fetchResultController.performFetch()
+            } catch {
+                print("讀取資料出現錯誤\(error)")
+            }
+        }
+    }
     
     
     //var appsetting: AppSetting!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        favoriteTableView.delegate = self
-        favoriteTableView.dataSource = self
-        print("FavoriteViewController is ready")
+        
+        favoriteTableView.dataSource = dataSource
+        fetchFavoriteData()
+        updateSnapShot()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,49 +73,68 @@ class FavoriteViewController: UIViewController, UITableViewDataSource, UITableVi
             setNeedsStatusBarAppearanceUpdate()
             
         }
-    }
-    
-    //MARK: tableView
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return musicFavorite.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showfavoritecell", for: indexPath) as! FavoriteTableViewCell
-        print("cell is ready")
-        configure(cell: cell, forRowAt: indexPath)
-        return cell
+        fetchFavoriteData()
+        configureDataSource()
     }
     
     //配置cell
-    func configure(cell: FavoriteTableViewCell, forRowAt indexPath: IndexPath) {
-        let favoriteResults = musicFavorite[indexPath.row]
+    func configureDataSource() -> UITableViewDiffableDataSource<Section, MusicFavorite> {
         
-        //配置文字部分
-        cell.TrackNameLabel.text = favoriteResults.trackName
-        cell.ArtistNameLabel.text = favoriteResults.artistName
-        if favoriteResults.description.isEmpty {
-            cell.DescriptionLabel.isHidden = true
-        } else {
-            cell.DescriptionLabel.isHidden = false
-            cell.DescriptionLabel.text = favoriteResults.description
-        }
         
-        //透過SDWebImage配置照片
-        let imageURL = favoriteResults.artworkUrl100
-        cell.CoverImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "photo"), options: SDWebImageOptions.scaleDownLargeImages) { (image, error, cacheType, imageURL) in
-                if let error = error {
-                    // 錯誤處理
-                    print(error.localizedDescription)
+        let dataSource = UITableViewDiffableDataSource<Section, MusicFavorite>(tableView: favoriteTableView)
+            { tableView, indexPath, music in
+                
+                let cell = tableView.dequeueReusableCell(withIdentifier: "showfavoritecell", for: indexPath) as! FavoriteTableViewCell
+                
+                let itemResults = music
+                
+                //配置文字部分
+                cell.TrackNameLabel.text = itemResults.trackName
+                cell.ArtistNameLabel.text = itemResults.artistName
+                if itemResults.description.isEmpty {
+                    cell.DescriptionLabel.isHidden = true
+                } else {
+                    cell.DescriptionLabel.isHidden = false
+                    cell.DescriptionLabel.text = itemResults.description
                 }
+                
+                //透過SDWebImage配置照片
+                let imageURL = itemResults.artworkUrl100
+                cell.CoverImageView.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "photo"), options: SDWebImageOptions.scaleDownLargeImages) { (image, error, cacheType, imageURL) in
+                    if let error = error {
+                        // 錯誤處理
+                        print(error.localizedDescription)
+                    }
+                }
+                
+            return cell
+                
             }
         
-        print("already configure")
+        return dataSource
+    }
+    
+    func updateSnapShot(animatingChange: Bool = false) {
         
+        guard let fetchedObjects = fetchResultController.fetchedObjects else {
+            return
+        }
+        
+        //創建快照
+        var snapshot = NSDiffableDataSourceSnapshot<Section, MusicFavorite>()
+        snapshot.appendSections([.all])
+        snapshot.appendItems(fetchedObjects, toSection: .all)
+        
+        dataSource.apply(snapshot, animatingDifferences: animatingChange)
     }
     
 
     
 
+}
+
+extension FavoriteViewController: NSFetchedResultsControllerDelegate {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        updateSnapShot()
+    }
 }

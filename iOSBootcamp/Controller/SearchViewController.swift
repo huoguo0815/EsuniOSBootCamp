@@ -53,6 +53,8 @@ class SearchViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         
+        fetchFavoriteData()
+        
         setNeedsStatusBarAppearanceUpdate()
         
         if mode == "light" {
@@ -102,9 +104,8 @@ class SearchViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.items = searchResponse
                     self.searchResultsCountLabel.text = "搜尋到\(self.items.count)個結果"
-                    //print("try to reload data")
                     self.itemListTableView.reloadData()
-                    self.configureDataSource()
+                    self.dataSource = self.configureDataSource()
                     self.updateSnapShot()
                 }
             case .failure(let error):
@@ -119,7 +120,7 @@ class SearchViewController: UIViewController {
     //配置cell
     func configureDataSource() -> UITableViewDiffableDataSource<Section, SearchItem> {
         
-        print("try to set cell")
+        
         let dataSource = MusicDiffableDataSource(
             
             tableView: itemListTableView,
@@ -188,7 +189,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    func updateSnapShot(animatingChange: Bool = false){
+    func updateSnapShot(animatingChange: Bool = false) {
         
         if let fetchedObjects = fetchResultController.fetchedObjects {
             musicFavorite = fetchedObjects
@@ -201,7 +202,7 @@ class SearchViewController: UIViewController {
         
         dataSource.apply(snapshot, animatingDifferences: animatingChange)
     }
-    //Thread 1: "Attempted to apply updates to a table view from a UITableViewDiffableDataSource, but the table view's dataSource is not the UITableViewDiffableDataSource. Table view: <UITableView: 0x157079600; frame = (-5 225; 394 622); clipsToBounds = YES; autoresize = W+H; gestureRecognizers = <NSArray: 0x600002bd5da0>; backgroundColor = <UIDynamicSystemColor: 0x600003022780; name = tableBackgroundColor>; layer = <CALayer: 0x60000253e1c0>; contentOffset: {0, 0}; contentSize: {394, 0}; adjustedContentInset: {0, 0, 78, 0}; dataSource: (null)>"
+    
     
 }
 

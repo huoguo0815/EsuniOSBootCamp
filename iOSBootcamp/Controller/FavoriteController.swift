@@ -9,13 +9,37 @@ import Foundation
 import CoreData
 import UIKit
 
-class FavoriteController {
+class FavoriteController: NSObject, NSFetchedResultsControllerDelegate {
     
     static let shared = FavoriteController()
     
     var musicFavorite: MusicFavorite!
+    var fetchResultController: NSFetchedResultsController<MusicFavorite>!
+    
+    //Core Data讀取資料
+    func fetchFavoriteData() {
+        
+        let fetchRequest: NSFetchRequest<MusicFavorite> = MusicFavorite.fetchRequest()
+        let sortDesriptor = NSSortDescriptor(key: "trackId", ascending: true)
+        fetchRequest.sortDescriptors = [sortDesriptor]
+        
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            let context = appDelegate.persistentContainer.viewContext
+            fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+            fetchResultController.delegate = self
+            
+            do {
+                try fetchResultController.performFetch()
+            } catch {
+                print("讀取資料出現錯誤\(error)")
+            }
+        }
+    }
     
     func isFavorite(trackId: Int) -> Bool {
+        
+        fetchFavoriteData()
+        
         let fetchRequest: NSFetchRequest<MusicFavorite> = MusicFavorite.fetchRequest()
         
         fetchRequest.predicate = NSPredicate(format: "trackId == %@", NSNumber(value: trackId))
@@ -54,4 +78,8 @@ class FavoriteController {
         
     }
     func removeFromFavorite() {}
+    
+    
 }
+
+

@@ -262,11 +262,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="ArtistNameLabel" destination="iHc-e0-ETN" id="fSf-aQ-zFd"/>
-                                            <outlet property="CoverImageView" destination="s6L-Uo-j2J" id="eVt-mH-4t7"/>
-                                            <outlet property="DescriptionLabel" destination="bwK-gS-Dvl" id="aES-pZ-fSp"/>
-                                            <outlet property="FavoriteButton" destination="Niw-t4-pcd" id="yj3-nG-zOk"/>
-                                            <outlet property="TrackNameLabel" destination="QY6-yC-XOJ" id="JAu-Kf-0P7"/>
+                                            <outlet property="ArtistNameLabel" destination="iHc-e0-ETN" id="L7t-Kk-c3e"/>
+                                            <outlet property="CoverImageView" destination="s6L-Uo-j2J" id="yJZ-xZ-Yv3"/>
+                                            <outlet property="DescriptionLabel" destination="bwK-gS-Dvl" id="OxL-Bw-USn"/>
+                                            <outlet property="FavoriteButton" destination="Niw-t4-pcd" id="7hR-86-2v9"/>
+                                            <outlet property="TrackNameLabel" destination="QY6-yC-XOJ" id="o62-Ia-QHS"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
