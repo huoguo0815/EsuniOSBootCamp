@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -96,11 +95,11 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yB7-no-OMH">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yB7-no-OMH">
                                                             <rect key="frame" x="283" y="20" width="70" height="138"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oB8-Uc-wjo">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="64"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="70" id="5rb-BH-ddk"/>
                                                                         <constraint firstAttribute="height" constant="70" id="CMb-sI-4lA"/>
@@ -122,7 +121,7 @@
                                                                     </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmb-7o-CHA">
-                                                                    <rect key="frame" x="0.0" y="68" width="70" height="70"/>
+                                                                    <rect key="frame" x="0.0" y="80" width="70" height="58"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="70" id="EaK-cp-NG2"/>
                                                                         <constraint firstAttribute="width" constant="70" id="VrO-Nb-a1X"/>
@@ -136,7 +135,7 @@
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="Bmb-7o-CHA" firstAttribute="top" secondItem="oB8-Uc-wjo" secondAttribute="bottom" constant="5" id="byS-Rk-Ucf"/>
+                                                                <constraint firstItem="Bmb-7o-CHA" firstAttribute="top" secondItem="oB8-Uc-wjo" secondAttribute="bottom" constant="10" id="byS-Rk-Ucf"/>
                                                                 <constraint firstItem="oB8-Uc-wjo" firstAttribute="top" secondItem="yB7-no-OMH" secondAttribute="top" id="whv-bp-anE"/>
                                                                 <constraint firstAttribute="height" constant="150" id="xgD-FG-uyZ"/>
                                                             </constraints>
