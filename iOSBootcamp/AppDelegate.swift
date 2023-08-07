@@ -27,9 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
 
-        //let newAppSetting = AppSetting(context: context)
-        
-        //newAppSetting.darkmode = "light"
+        if let saveMode = UserDefaults.standard.string(forKey: "themeMode") {
+            mode = saveMode
+        } else {
+            mode = "ligh"
+        }
         
         return true
     }

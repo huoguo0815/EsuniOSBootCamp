@@ -25,6 +25,7 @@ class SearchController {
         //print(manager)
         
         manager.get(urlComponents.url!.absoluteString, parameters: nil, headers: nil, progress: nil, success: { (task, responseObject) in
+            //print(responseObject)
             //print("The type of responseObject is ",type(of: responseObject!))
             let Object = self.jsonToData(jsonDic: responseObject as! NSDictionary)
             //print("The type of responseObject is ",type(of: Object!))

@@ -11,7 +11,11 @@ class ModeViewController: UIViewController {
     
     //var appsetting: AppSetting!
     
-    @IBOutlet var chooseButton: UIButton!
+    @IBOutlet var chooseButton: UIButton! {
+        didSet {
+            chooseButton.isHighlighted = false
+        }
+    }
     
     @IBAction func changeButtonTapped(sender: UIButton) {
         
@@ -20,6 +24,8 @@ class ModeViewController: UIViewController {
         let darkAction = UIAlertAction(title: "深色模式", style: .default, handler: { (action) in
             
             mode = "dark"
+            let selectedMode = "dark"
+            UserDefaults.standard.set(selectedMode, forKey: "themeMode")
             self.overrideUserInterfaceStyle = .dark
             let window = UIApplication.shared.windows.first
             
@@ -30,7 +36,8 @@ class ModeViewController: UIViewController {
         let lightAction = UIAlertAction(title: "淺色模式", style: .default, handler: { (action) in
             
             mode = "light"
-            
+            let selectedMode = "light"
+            UserDefaults.standard.set(selectedMode, forKey: "themeMode")
             self.overrideUserInterfaceStyle = .light
             let window = UIApplication.shared.windows.first
             

@@ -17,26 +17,15 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var ArtistNameLabel: UILabel!
     @IBOutlet weak var DescriptionLabel: UILabel!
     @IBOutlet weak var FavoriteButton: UIButton!
+    @IBOutlet weak var CollectionNameLabel: UILabel!
+    @IBOutlet weak var MusicTimeLabel: UILabel!
     
-    var itemResults: SearchItem?
+    var delegate: FavoriteDelegate?
     
     @IBAction func favoriteButtonTapped(_ sender: UIButton) {
         
-        let itemResults = itemResults
-        let trackId = itemResults?.trackId
-        let trackName = itemResults?.trackName
-        let artistName = itemResults?.artistName
-        let description = itemResults?.description
-        let artworkUrl100 = itemResults?.artworkUrl100
-        
-        
-        if FavoriteController.shared.isFavorite(trackId: trackId!) {
-            FavoriteController.shared.removeFromFavorite()
-        } else {
-            FavoriteController.shared.addToFavorite(trackId: trackId!, trackName: trackName!, artistName: artistName!, artworkUrl100: artworkUrl100!)
-        }
-        
-        
+        delegate?.FavoritecellButtonTapped(for: self)
+        //print("button is tapped")
         
     }
 
@@ -51,4 +40,8 @@ class FavoriteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+protocol FavoriteDelegate {
+    func FavoritecellButtonTapped(for cell: FavoriteTableViewCell)
 }

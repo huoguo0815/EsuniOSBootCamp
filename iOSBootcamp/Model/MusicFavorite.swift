@@ -19,5 +19,9 @@ public class MusicFavorite: NSManagedObject {
     @NSManaged public var trackdescription: String?
     @NSManaged public var isFavorite: Bool
     @NSManaged public var artworkUrl100: URL
+    @NSManaged public var kind: String
+    @NSManaged public var trackViewUrl: URL
+    @NSManaged public var collectionName: String?
+    @NSManaged public var trackTime: String
     
 }

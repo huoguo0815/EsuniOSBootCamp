@@ -7,8 +7,9 @@
 
 import UIKit
 
-enum Section {
-    case all
+enum Section: Int, CaseIterable {
+    case movie
+    case music
 }
 
 class MusicDiffableDataSource: UITableViewDiffableDataSource<Section, SearchItem> {
