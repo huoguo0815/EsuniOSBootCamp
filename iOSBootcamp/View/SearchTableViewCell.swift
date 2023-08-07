@@ -9,11 +9,19 @@ import UIKit
 
 class SearchTableViewCell: UITableViewCell {
     
-    @IBOutlet var CoverImageView: UIImageView!
-    @IBOutlet var TrackNameLabel: UILabel!
-    @IBOutlet var ArtistNameLabel: UILabel!
-    @IBOutlet var DescriptionLabel: UILabel!
-    @IBOutlet var FavoriteButton: UIButton!
+    @IBOutlet weak var CoverImageView: UIImageView!
+    @IBOutlet weak var TrackNameLabel: UILabel!
+    @IBOutlet weak var ArtistNameLabel: UILabel!
+    @IBOutlet weak var DescriptionLabel: UILabel!
+    @IBOutlet weak var FavoriteButton: UIButton!
+    
+    var delegate: SearchDelegate?
+    
+    @IBAction func favoriteButtonTapped(_ sender: UIButton) {
+        
+        delegate?.cellButtonTapped(for: self)
+        print("button is tapped")
+    }
     
 
     override func awakeFromNib() {
@@ -27,4 +35,8 @@ class SearchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+}
+
+protocol SearchDelegate {
+    func cellButtonTapped(for cell: SearchTableViewCell)
 }

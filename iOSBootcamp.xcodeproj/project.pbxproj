@@ -13,13 +13,28 @@
 		7E7BCD3B2A5BB45B00AC8746 /* iOSBootcamp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD392A5BB45B00AC8746 /* iOSBootcamp.xcdatamodeld */; };
 		7E7BCD3D2A5BB45C00AC8746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BCD3C2A5BB45C00AC8746 /* Assets.xcassets */; };
 		7E7BCD402A5BB45C00AC8746 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E7BCD3E2A5BB45C00AC8746 /* LaunchScreen.storyboard */; };
-		7E7BCD4C2A5BEC8000AC8746 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD4B2A5BEC8000AC8746 /* SearchTableViewController.swift */; };
 		7E7BCD4E2A5BED0500AC8746 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD4D2A5BED0500AC8746 /* SearchTableViewCell.swift */; };
 		7E7BCD502A5CF9DF00AC8746 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */; };
-		7E7BCD522A5D013200AC8746 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD512A5D013200AC8746 /* SearchController.swift */; };
+		7E7BCD562A5E4A6700AC8746 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7BCD552A5E4A6700AC8746 /* SearchViewController.swift */; };
+		7E8530F42A5FD8C700350EAE /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8530F32A5FD8C700350EAE /* SearchController.swift */; };
+		7E8530F62A66360B00350EAE /* Personal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E8530F52A66360B00350EAE /* Personal.storyboard */; };
+		7E8530FC2A6680FF00350EAE /* ModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8530FB2A6680FF00350EAE /* ModeViewController.swift */; };
+		7E8530FE2A66811300350EAE /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8530FD2A66811300350EAE /* FavoriteViewController.swift */; };
+		7E8531002A668C4F00350EAE /* PersonalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8530FF2A668C4F00350EAE /* PersonalTableViewCell.swift */; };
+		7E8531022A668C6200350EAE /* ModeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8531012A668C6200350EAE /* ModeTableViewCell.swift */; };
+		7E8531042A668C7900350EAE /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8531032A668C7900350EAE /* FavoriteTableViewCell.swift */; };
+		7EA6DAFD2A67851B00B72272 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DAFC2A67851B00B72272 /* PersonalViewController.swift */; };
+		7EA6DB052A691AFC00B72272 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB042A691AFC00B72272 /* NavigationController.swift */; };
+		7EA6DB0A2A6F70A600B72272 /* MusicFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB092A6F70A600B72272 /* MusicFavorite.swift */; };
+		7EA6DB0C2A6FD1FB00B72272 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */; };
+		7EA6DB0E2A72444E00B72272 /* MusicDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */; };
+		927338D42750EB072D1E624F /* Pods_iOSBootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB973E9A8CE38ABA04940B0 /* Pods_iOSBootcamp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1AB973E9A8CE38ABA04940B0 /* Pods_iOSBootcamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSBootcamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29750CF7BBF12DD21CB8D82D /* Pods-iOSBootcamp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBootcamp.release.xcconfig"; path = "Target Support Files/Pods-iOSBootcamp/Pods-iOSBootcamp.release.xcconfig"; sourceTree = "<group>"; };
+		3943B63B6FC8A37015A44825 /* Pods-iOSBootcamp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSBootcamp.debug.xcconfig"; path = "Target Support Files/Pods-iOSBootcamp/Pods-iOSBootcamp.debug.xcconfig"; sourceTree = "<group>"; };
 		7E7BCD2D2A5BB45B00AC8746 /* iOSBootcamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSBootcamp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E7BCD302A5BB45B00AC8746 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E7BCD322A5BB45B00AC8746 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,10 +43,21 @@
 		7E7BCD3C2A5BB45C00AC8746 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E7BCD3F2A5BB45C00AC8746 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E7BCD412A5BB45C00AC8746 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7E7BCD4B2A5BEC8000AC8746 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		7E7BCD4D2A5BED0500AC8746 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
-		7E7BCD512A5D013200AC8746 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		7E7BCD552A5E4A6700AC8746 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7E8530F32A5FD8C700350EAE /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		7E8530F52A66360B00350EAE /* Personal.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Personal.storyboard; sourceTree = "<group>"; };
+		7E8530FB2A6680FF00350EAE /* ModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeViewController.swift; sourceTree = "<group>"; };
+		7E8530FD2A66811300350EAE /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		7E8530FF2A668C4F00350EAE /* PersonalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalTableViewCell.swift; sourceTree = "<group>"; };
+		7E8531012A668C6200350EAE /* ModeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeTableViewCell.swift; sourceTree = "<group>"; };
+		7E8531032A668C7900350EAE /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		7EA6DAFC2A67851B00B72272 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
+		7EA6DB042A691AFC00B72272 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		7EA6DB092A6F70A600B72272 /* MusicFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFavorite.swift; sourceTree = "<group>"; };
+		7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
+		7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDiffableDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +65,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				927338D42750EB072D1E624F /* Pods_iOSBootcamp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EF7437ABCE1C17A594C716F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3943B63B6FC8A37015A44825 /* Pods-iOSBootcamp.debug.xcconfig */,
+				29750CF7BBF12DD21CB8D82D /* Pods-iOSBootcamp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7E7BCD242A5BB45B00AC8746 = {
 			isa = PBXGroup;
 			children = (
 				7E7BCD2F2A5BB45B00AC8746 /* iOSBootcamp */,
 				7E7BCD2E2A5BB45B00AC8746 /* Products */,
+				6EF7437ABCE1C17A594C716F /* Pods */,
+				CFDF4768EFC97784A7EC1FDC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,9 +119,13 @@
 		7E7BCD472A5BEAA000AC8746 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7E7BCD4B2A5BEC8000AC8746 /* SearchTableViewController.swift */,
-				7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */,
-				7E7BCD512A5D013200AC8746 /* SearchController.swift */,
+				7E7BCD552A5E4A6700AC8746 /* SearchViewController.swift */,
+				7E8530F32A5FD8C700350EAE /* SearchController.swift */,
+				7E8530FB2A6680FF00350EAE /* ModeViewController.swift */,
+				7E8530FD2A66811300350EAE /* FavoriteViewController.swift */,
+				7EA6DAFC2A67851B00B72272 /* PersonalViewController.swift */,
+				7EA6DB042A691AFC00B72272 /* NavigationController.swift */,
+				7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -91,6 +133,9 @@
 		7E7BCD482A5BEABC00AC8746 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7E7BCD4F2A5CF9DF00AC8746 /* SearchResponse.swift */,
+				7EA6DB092A6F70A600B72272 /* MusicFavorite.swift */,
+				7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +143,7 @@
 		7E7BCD492A5BEAC300AC8746 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				7E8530F52A66360B00350EAE /* Personal.storyboard */,
 				7E7BCD362A5BB45B00AC8746 /* Main.storyboard */,
 			);
 			path = StoryBoard;
@@ -107,8 +153,19 @@
 			isa = PBXGroup;
 			children = (
 				7E7BCD4D2A5BED0500AC8746 /* SearchTableViewCell.swift */,
+				7E8530FF2A668C4F00350EAE /* PersonalTableViewCell.swift */,
+				7E8531012A668C6200350EAE /* ModeTableViewCell.swift */,
+				7E8531032A668C7900350EAE /* FavoriteTableViewCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CFDF4768EFC97784A7EC1FDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AB973E9A8CE38ABA04940B0 /* Pods_iOSBootcamp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E7BCD442A5BB45C00AC8746 /* Build configuration list for PBXNativeTarget "iOSBootcamp" */;
 			buildPhases = (
+				482CABFB10E5EDD864A13F84 /* [CP] Check Pods Manifest.lock */,
 				7E7BCD292A5BB45B00AC8746 /* Sources */,
 				7E7BCD2A2A5BB45B00AC8746 /* Frameworks */,
 				7E7BCD2B2A5BB45B00AC8746 /* Resources */,
+				2804DA3DB237F5E691136CC8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,11 +230,54 @@
 			files = (
 				7E7BCD402A5BB45C00AC8746 /* LaunchScreen.storyboard in Resources */,
 				7E7BCD3D2A5BB45C00AC8746 /* Assets.xcassets in Resources */,
+				7E8530F62A66360B00350EAE /* Personal.storyboard in Resources */,
 				7E7BCD382A5BB45B00AC8746 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2804DA3DB237F5E691136CC8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSBootcamp/Pods-iOSBootcamp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iOSBootcamp/Pods-iOSBootcamp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOSBootcamp/Pods-iOSBootcamp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		482CABFB10E5EDD864A13F84 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOSBootcamp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E7BCD292A5BB45B00AC8746 /* Sources */ = {
@@ -183,11 +285,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E7BCD3B2A5BB45B00AC8746 /* iOSBootcamp.xcdatamodeld in Sources */,
+				7E7BCD562A5E4A6700AC8746 /* SearchViewController.swift in Sources */,
 				7E7BCD312A5BB45B00AC8746 /* AppDelegate.swift in Sources */,
+				7EA6DB0E2A72444E00B72272 /* MusicDiffableDataSource.swift in Sources */,
+				7E8530FE2A66811300350EAE /* FavoriteViewController.swift in Sources */,
+				7EA6DB0A2A6F70A600B72272 /* MusicFavorite.swift in Sources */,
+				7E8530F42A5FD8C700350EAE /* SearchController.swift in Sources */,
+				7E8531002A668C4F00350EAE /* PersonalTableViewCell.swift in Sources */,
+				7EA6DB0C2A6FD1FB00B72272 /* FavoriteController.swift in Sources */,
+				7EA6DAFD2A67851B00B72272 /* PersonalViewController.swift in Sources */,
+				7E8531042A668C7900350EAE /* FavoriteTableViewCell.swift in Sources */,
 				7E7BCD502A5CF9DF00AC8746 /* SearchResponse.swift in Sources */,
-				7E7BCD522A5D013200AC8746 /* SearchController.swift in Sources */,
+				7EA6DB052A691AFC00B72272 /* NavigationController.swift in Sources */,
 				7E7BCD332A5BB45B00AC8746 /* SceneDelegate.swift in Sources */,
-				7E7BCD4C2A5BEC8000AC8746 /* SearchTableViewController.swift in Sources */,
+				7E8530FC2A6680FF00350EAE /* ModeViewController.swift in Sources */,
+				7E8531022A668C6200350EAE /* ModeTableViewCell.swift in Sources */,
 				7E7BCD4E2A5BED0500AC8746 /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,6 +442,7 @@
 		};
 		7E7BCD452A5BB45C00AC8746 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3943B63B6FC8A37015A44825 /* Pods-iOSBootcamp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -341,6 +454,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +472,7 @@
 		};
 		7E7BCD462A5BB45C00AC8746 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29750CF7BBF12DD21CB8D82D /* Pods-iOSBootcamp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -369,6 +484,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
