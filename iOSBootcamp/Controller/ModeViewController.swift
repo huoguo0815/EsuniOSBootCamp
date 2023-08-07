@@ -31,6 +31,8 @@ class ModeViewController: UIViewController {
             
             window?.overrideUserInterfaceStyle = .dark
             
+            self.chooseButton.setTitle("深色模式", for: .normal)
+            
         })
         
         let lightAction = UIAlertAction(title: "淺色模式", style: .default, handler: { (action) in
@@ -43,12 +45,16 @@ class ModeViewController: UIViewController {
             
             window?.overrideUserInterfaceStyle = .light
             
+            self.chooseButton.setTitle("淺色模式", for: .normal)
+            
         })
         
         darkmodeController.addAction(darkAction)
         darkmodeController.addAction(lightAction)
         
         present(darkmodeController,animated: true, completion: nil)
+        
+        
     }
     
    
@@ -68,6 +74,7 @@ class ModeViewController: UIViewController {
             tabBarController?.tabBar.overrideUserInterfaceStyle = .light
             overrideUserInterfaceStyle = .light
             setNeedsStatusBarAppearanceUpdate()
+            chooseButton.setTitle("淺色模式", for: .normal)
             
         } else if mode == "dark" {
             
@@ -75,6 +82,7 @@ class ModeViewController: UIViewController {
             navigationController?.navigationBar.overrideUserInterfaceStyle = .dark
             tabBarController?.tabBar.overrideUserInterfaceStyle = .dark
             setNeedsStatusBarAppearanceUpdate()
+            chooseButton.setTitle("深色模式", for: .normal)
             
         }
     }

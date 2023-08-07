@@ -28,6 +28,7 @@
 		7EA6DB0A2A6F70A600B72272 /* MusicFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB092A6F70A600B72272 /* MusicFavorite.swift */; };
 		7EA6DB0C2A6FD1FB00B72272 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */; };
 		7EA6DB0E2A72444E00B72272 /* MusicDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */; };
+		7EA6DB102A80E5C800B72272 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0F2A80E5C800B72272 /* WebViewController.swift */; };
 		927338D42750EB072D1E624F /* Pods_iOSBootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB973E9A8CE38ABA04940B0 /* Pods_iOSBootcamp.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		7EA6DB092A6F70A600B72272 /* MusicFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicFavorite.swift; sourceTree = "<group>"; };
 		7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
 		7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDiffableDataSource.swift; sourceTree = "<group>"; };
+		7EA6DB0F2A80E5C800B72272 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				7EA6DAFC2A67851B00B72272 /* PersonalViewController.swift */,
 				7EA6DB042A691AFC00B72272 /* NavigationController.swift */,
 				7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */,
+				7EA6DB0F2A80E5C800B72272 /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E7BCD3B2A5BB45B00AC8746 /* iOSBootcamp.xcdatamodeld in Sources */,
+				7EA6DB102A80E5C800B72272 /* WebViewController.swift in Sources */,
 				7E7BCD562A5E4A6700AC8746 /* SearchViewController.swift in Sources */,
 				7E7BCD312A5BB45B00AC8746 /* AppDelegate.swift in Sources */,
 				7EA6DB0E2A72444E00B72272 /* MusicDiffableDataSource.swift in Sources */,

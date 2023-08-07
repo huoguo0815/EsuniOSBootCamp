@@ -127,12 +127,14 @@ class SearchViewController: UIViewController, UITableViewDelegate {
             if lastTappedIndexPath.section == 0 {
                 itemResults = movieitems[lastTappedIndexPath.row]
                 if itemResults.isFullDescriptionVisible {
-                    return 400
+                    let descriptionLabelHeight = itemResults.description.height(withConstrainedWidth: tableView.bounds.width - 40, font: UIFont.systemFont(ofSize: 17))
+                        return 200 + descriptionLabelHeight
                 }
             } else {
                 itemResults = musicitems[lastTappedIndexPath.row]
                 if itemResults.isFullDescriptionVisible {
-                    return 400
+                    let descriptionLabelHeight = itemResults.description.height(withConstrainedWidth: tableView.bounds.width - 40, font: UIFont.systemFont(ofSize: 17))
+                        return 200 + descriptionLabelHeight
                 }
             }
             
@@ -216,19 +218,31 @@ class SearchViewController: UIViewController, UITableViewDelegate {
                     
                     //配置文字部分
                     cell.TrackNameLabel.text = itemResults.trackName
+                    cell.TrackNameLabel.sizeToFit()
                     cell.ArtistNameLabel.text = itemResults.artistName
+                    cell.ArtistNameLabel.sizeToFit()
                     if itemResults.collectionName.isEmpty {
                         cell.CollectionName.isHidden = true
                     } else {
+                        cell.CollectionName.isHidden = false
                         cell.CollectionName.text = itemResults.collectionName
+                        cell.CollectionName.sizeToFit()
                     }
                     let timeResult = self.formatTime(from: itemResults.trackTimeMillis)
-                    cell.TimeLabel.text = timeResult
+                    if timeResult == "00" {
+                        cell.TimeLabel.isHidden = true
+                    } else {
+                        cell.TimeLabel.isHidden = false
+                        cell.TimeLabel.text = timeResult
+                        cell.TimeLabel.sizeToFit()
+                    }
+                    
                     if itemResults.description.isEmpty {
                         cell.DescriptionLabel.isHidden = true
                     } else {
                         cell.DescriptionLabel.isHidden = false
                         cell.DescriptionLabel.text = itemResults.description
+                        cell.DescriptionLabel.sizeToFit()
                     }
                     
                     //透過SDWebImage配置照片
@@ -355,9 +369,11 @@ class SearchViewController: UIViewController, UITableViewDelegate {
         let seconds = mills % 60
 
         if hours > 0 {
-            return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+            return String(format:"%d:%02d:%02d" ,hours, minutes, seconds)
+        } else if minutes > 0 {
+            return String(format:"%d:%02d", minutes, seconds)
         } else {
-            return String(format: "%02d:%02d", minutes, seconds)
+            return String(format:"%02d", seconds)
         }
     }
     
@@ -442,5 +458,13 @@ extension SearchViewController: SearchDelegate {
             TappedIndexPath = indexPath
             updateSnapShot(animatingChange: true)
         }
+    }
+}
+
+extension String {
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
+        return ceil(boundingBox.height)
     }
 }

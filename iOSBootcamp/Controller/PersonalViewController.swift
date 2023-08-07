@@ -20,12 +20,7 @@ class PersonalViewController: UIViewController, NSFetchedResultsControllerDelega
         }
     }
     
-    @IBAction func iTunesButtonTapped(_ sender: UIButton) {
-        let trackViewUrlString = "https://support.apple.com/itunes"
-        let trackViewUrl = URL(string: trackViewUrlString)
-        let controller = SFSafariViewController(url: trackViewUrl!)
-        present(controller, animated: true, completion: nil)
-    }
+    
     
     var musicFavorite: [MusicFavorite] = []
     var fetchResultController: NSFetchedResultsController<MusicFavorite>!
@@ -76,6 +71,8 @@ class PersonalViewController: UIViewController, NSFetchedResultsControllerDelega
             let destinationController = segue.destination as! ModeViewController
         case "showFavorite":
             let destinationController = segue.destination as! FavoriteViewController
+        case "showWeb":
+            let destinationController = segue.destination as! WebViewController
         default: break
         }
     }

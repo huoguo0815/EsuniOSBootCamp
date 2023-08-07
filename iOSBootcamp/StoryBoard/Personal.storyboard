@@ -66,6 +66,36 @@
             </objects>
             <point key="canvasLocation" x="646.56488549618314" y="1060.5633802816901"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="tKD-bV-6PP">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="UQI-iE-6ja" customClass="WebViewController" customModule="iOSBootcamp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jtt-co-dpF">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IHX-8i-Zck">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oxN-Zk-rQF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="leG-Fh-UkK"/>
+                    <connections>
+                        <outlet property="webView" destination="IHX-8i-Zck" id="qUN-zI-Huu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eUN-fA-rHZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="596.18320610687022" y="-521.12676056338034"/>
+        </scene>
         <!--個人頁面-->
         <scene sceneID="clP-Y5-fLG">
             <objects>
@@ -84,7 +114,7 @@
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="⍰ 關於Apple iTunes" buttonSize="medium"/>
                                     <connections>
-                                        <action selector="iTunesButtonTapped:" destination="OIs-b5-JHm" eventType="touchUpInside" id="c06-jT-a85"/>
+                                        <segue destination="UQI-iE-6ja" kind="show" id="dUa-2O-C0b"/>
                                     </connections>
                                 </button>
                                 <prototypes>
