@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let saveMode = UserDefaults.standard.string(forKey: "themeMode") {
             mode = saveMode
         } else {
-            mode = "ligh"
+            mode = "light"
         }
         
         return true

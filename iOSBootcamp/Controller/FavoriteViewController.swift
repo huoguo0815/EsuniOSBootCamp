@@ -135,7 +135,13 @@ class FavoriteViewController: UIViewController, UITableViewDelegate {
                 cell.ArtistNameLabel.sizeToFit()
                 cell.CollectionNameLabel.text = itemResults.collectionName
                 cell.CollectionNameLabel.sizeToFit()
-                cell.MusicTimeLabel.text = itemResults.trackTime
+                if itemResults.trackTime == "00" {
+                    cell.TrackNameLabel.isHidden = true
+                } else {
+                    cell.TrackNameLabel.isHidden = false
+                    cell.MusicTimeLabel.text = itemResults.trackTime
+                }
+                
                 
                 if itemResults.trackdescription!.isEmpty {
                     cell.DescriptionLabel.isHidden = true
@@ -182,9 +188,9 @@ class FavoriteViewController: UIViewController, UITableViewDelegate {
         let seconds = mills % 60
 
         if hours > 0 {
-            return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+            return String(format: "%2d:%02d:%02d", hours, minutes, seconds)
         } else {
-            return String(format: "%02d:%02d", minutes, seconds)
+            return String(format: "%2d:%02d", minutes, seconds)
         }
     }
     

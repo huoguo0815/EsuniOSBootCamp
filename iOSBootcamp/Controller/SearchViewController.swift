@@ -22,6 +22,7 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var searchResultsCountLabel: UILabel!
     @IBOutlet weak var searchItemBar: UISearchBar!
     
+    
     var delegate: SearchDelegate?
     var fetchResultController: NSFetchedResultsController<MusicFavorite>!
     lazy var dataSource = configureDataSource()
@@ -31,6 +32,7 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     var musicitems = [SearchItem]()
     var movieitems = [SearchItem]()
     var musicFavorite: [MusicFavorite] = []
+    let loadingIndicator = UIActivityIndicatorView(style: .large)
     
     
 
@@ -43,6 +45,11 @@ class SearchViewController: UIViewController, UITableViewDelegate {
         itemListTableView.delegate = self
         itemListTableView.dataSource = dataSource
         fetchFavoriteData()
+        
+        // 將 loadingIndicator 放在畫面中央並隱藏
+        loadingIndicator.center = view.center
+        loadingIndicator.hidesWhenStopped = true
+        view.addSubview(loadingIndicator)
         
     }
     
@@ -148,6 +155,7 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     //搜尋連線建立
     func search() {
         searchResultsCountLabel.text = "搜尋中..."
+        loadingIndicator.startAnimating()
         guard let searchTerm = searchItemBar.text else { return }
         let musicparameters = [
             "term": searchTerm,
@@ -195,6 +203,7 @@ class SearchViewController: UIViewController, UITableViewDelegate {
         //搜尋完成後開始顯現資料
         dispatchGroup.notify(queue: .main) {
             //self.itemListTableView.reloadData()
+            self.loadingIndicator.stopAnimating()
             self.dataSource = self.configureDataSource()
             self.updateSnapShot()
             self.searchResultsCountLabel.text = "搜尋到\(self.movieitems.count + self.musicitems.count)個結果"
@@ -335,11 +344,14 @@ class SearchViewController: UIViewController, UITableViewDelegate {
         fetchRequest.sortDescriptors = [sortDesriptor]
         
         if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            //取得Core Data上下文
             let context = appDelegate.persistentContainer.viewContext
+            //建立controller，當資料有變化時取得通知
             fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
             fetchResultController.delegate = self
             
             do {
+                //從Core Data中檢索資料
                 try fetchResultController.performFetch()
             } catch {
                 print("讀取資料出現錯誤\(error)")
@@ -349,6 +361,7 @@ class SearchViewController: UIViewController, UITableViewDelegate {
     
     func updateSnapShot(animatingChange: Bool = false) {
         
+        //檢索Core Data資料
         if let fetchedObjects = fetchResultController.fetchedObjects {
             musicFavorite = fetchedObjects
         }
@@ -359,6 +372,7 @@ class SearchViewController: UIViewController, UITableViewDelegate {
         snapshot.appendItems(musicitems, toSection: .music)
         snapshot.appendItems(movieitems, toSection: .movie)
         
+        //應用快照
         dataSource.apply(snapshot, animatingDifferences: animatingChange)
     }
     
@@ -388,6 +402,7 @@ extension SearchViewController: NSFetchedResultsControllerDelegate {
 extension SearchViewController: UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         search()
+        //讓鍵盤關閉
         searchItemBar.resignFirstResponder()
     }
     
