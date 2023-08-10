@@ -29,8 +29,20 @@
 		7EA6DB0C2A6FD1FB00B72272 /* FavoriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */; };
 		7EA6DB0E2A72444E00B72272 /* MusicDiffableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */; };
 		7EA6DB102A80E5C800B72272 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB0F2A80E5C800B72272 /* WebViewController.swift */; };
+		7EA6DB182A83699100B72272 /* iOSBootcampTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB172A83699100B72272 /* iOSBootcampTests.swift */; };
+		7EA6DB1F2A836FBB00B72272 /* APITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EA6DB1E2A836FBB00B72272 /* APITest.swift */; };
 		927338D42750EB072D1E624F /* Pods_iOSBootcamp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AB973E9A8CE38ABA04940B0 /* Pods_iOSBootcamp.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7EA6DB192A83699100B72272 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7E7BCD252A5BB45B00AC8746 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E7BCD2C2A5BB45B00AC8746;
+			remoteInfo = iOSBootcamp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1AB973E9A8CE38ABA04940B0 /* Pods_iOSBootcamp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSBootcamp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +72,9 @@
 		7EA6DB0B2A6FD1FB00B72272 /* FavoriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteController.swift; sourceTree = "<group>"; };
 		7EA6DB0D2A72444E00B72272 /* MusicDiffableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDiffableDataSource.swift; sourceTree = "<group>"; };
 		7EA6DB0F2A80E5C800B72272 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		7EA6DB152A83699100B72272 /* iOSBootcampTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSBootcampTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EA6DB172A83699100B72272 /* iOSBootcampTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSBootcampTests.swift; sourceTree = "<group>"; };
+		7EA6DB1E2A836FBB00B72272 /* APITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +83,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				927338D42750EB072D1E624F /* Pods_iOSBootcamp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA6DB122A83699100B72272 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				7E7BCD2F2A5BB45B00AC8746 /* iOSBootcamp */,
+				7EA6DB162A83699100B72272 /* iOSBootcampTests */,
 				7E7BCD2E2A5BB45B00AC8746 /* Products */,
 				6EF7437ABCE1C17A594C716F /* Pods */,
 				CFDF4768EFC97784A7EC1FDC /* Frameworks */,
@@ -97,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				7E7BCD2D2A5BB45B00AC8746 /* iOSBootcamp.app */,
+				7EA6DB152A83699100B72272 /* iOSBootcampTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +187,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7EA6DB162A83699100B72272 /* iOSBootcampTests */ = {
+			isa = PBXGroup;
+			children = (
+				7EA6DB1E2A836FBB00B72272 /* APITest.swift */,
+				7EA6DB172A83699100B72272 /* iOSBootcampTests.swift */,
+			);
+			path = iOSBootcampTests;
+			sourceTree = "<group>";
+		};
 		CFDF4768EFC97784A7EC1FDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +226,24 @@
 			productReference = 7E7BCD2D2A5BB45B00AC8746 /* iOSBootcamp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7EA6DB142A83699100B72272 /* iOSBootcampTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EA6DB1D2A83699100B72272 /* Build configuration list for PBXNativeTarget "iOSBootcampTests" */;
+			buildPhases = (
+				7EA6DB112A83699100B72272 /* Sources */,
+				7EA6DB122A83699100B72272 /* Frameworks */,
+				7EA6DB132A83699100B72272 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EA6DB1A2A83699100B72272 /* PBXTargetDependency */,
+			);
+			name = iOSBootcampTests;
+			productName = iOSBootcampTests;
+			productReference = 7EA6DB152A83699100B72272 /* iOSBootcampTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +256,10 @@
 				TargetAttributes = {
 					7E7BCD2C2A5BB45B00AC8746 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					7EA6DB142A83699100B72272 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 7E7BCD2C2A5BB45B00AC8746;
 					};
 				};
 			};
@@ -222,6 +277,7 @@
 			projectRoot = "";
 			targets = (
 				7E7BCD2C2A5BB45B00AC8746 /* iOSBootcamp */,
+				7EA6DB142A83699100B72272 /* iOSBootcampTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +291,13 @@
 				7E7BCD3D2A5BB45C00AC8746 /* Assets.xcassets in Resources */,
 				7E8530F62A66360B00350EAE /* Personal.storyboard in Resources */,
 				7E7BCD382A5BB45B00AC8746 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EA6DB132A83699100B72272 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +371,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EA6DB112A83699100B72272 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA6DB1F2A836FBB00B72272 /* APITest.swift in Sources */,
+				7EA6DB182A83699100B72272 /* iOSBootcampTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7EA6DB1A2A83699100B72272 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E7BCD2C2A5BB45B00AC8746 /* iOSBootcamp */;
+			targetProxy = 7EA6DB192A83699100B72272 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		7E7BCD362A5BB45B00AC8746 /* Main.storyboard */ = {
@@ -504,6 +584,50 @@
 			};
 			name = Release;
 		};
+		7EA6DB1B2A83699100B72272 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4WND9MZXNC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftTraining.iOSBootcampTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSBootcamp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOSBootcamp";
+			};
+			name = Debug;
+		};
+		7EA6DB1C2A83699100B72272 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4WND9MZXNC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 12.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftTraining.iOSBootcampTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iOSBootcamp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/iOSBootcamp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -521,6 +645,15 @@
 			buildConfigurations = (
 				7E7BCD452A5BB45C00AC8746 /* Debug */,
 				7E7BCD462A5BB45C00AC8746 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EA6DB1D2A83699100B72272 /* Build configuration list for PBXNativeTarget "iOSBootcampTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EA6DB1B2A83699100B72272 /* Debug */,
+				7EA6DB1C2A83699100B72272 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

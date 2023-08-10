@@ -15,6 +15,14 @@ class SearchController {
     static let shared = SearchController()
     
     func fetchItems(matching query: [String: String], completion: @escaping (Result<[SearchItem], Error>) -> ()) {
+        
+        // 檢查查詢是否為空
+        if query.isEmpty {
+            let error = NSError(domain: "Invalid response", code: 0, userInfo: nil)
+            completion(.failure(error))
+            return
+        }
+        
         var urlComponents = URLComponents(string: "https://itunes.apple.com/search")!
         urlComponents.queryItems = query.map{URLQueryItem(name: $0.key, value: $0.value)}
         
