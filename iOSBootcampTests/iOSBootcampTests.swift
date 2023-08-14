@@ -29,7 +29,11 @@ final class iOSBootcampTests: XCTestCase {
             XCTAssertNil(error)
         }
         // 將模擬存儲設置為 FavoriteController 使用的存儲
-        FavoriteController.shared.fetchResultController = NSFetchedResultsController(fetchRequest: MusicFavorite.fetchRequest(), managedObjectContext: mockPersistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchRequest: NSFetchRequest<MusicFavorite> = MusicFavorite.fetchRequest()
+        let sortDesriptor = NSSortDescriptor(key: "trackId", ascending: true)
+        fetchRequest.sortDescriptors = [sortDesriptor]
+        FavoriteController.shared.fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: mockPersistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        
             
     }
     override func tearDown() {
@@ -50,7 +54,10 @@ final class iOSBootcampTests: XCTestCase {
         }
 
         // 將模擬存儲設置為 FavoriteController 使用的存儲
-        favoriteController.fetchResultController = NSFetchedResultsController(fetchRequest: MusicFavorite.fetchRequest(), managedObjectContext: mockPersistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        let fetchRequest: NSFetchRequest<MusicFavorite> = MusicFavorite.fetchRequest()
+        let sortDesriptor = NSSortDescriptor(key: "trackId", ascending: true)
+        fetchRequest.sortDescriptors = [sortDesriptor]
+        favoriteController.fetchResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: mockPersistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
         
         // 設置 fetchResultController 給 dataSource
         viewController.fetchResultController = favoriteController.fetchResultController
@@ -62,9 +69,8 @@ final class iOSBootcampTests: XCTestCase {
 
         
         // 調用 addToFavorite
-        let trackId: Int64 = 123
         favoriteController.addToFavorite(
-            trackId: Int(trackId),
+            trackId: 123,
             trackName: "Test Track",
             artistName: "Test Artist",
             trackdescription: "Test Description",
@@ -76,32 +82,34 @@ final class iOSBootcampTests: XCTestCase {
         )
 
         // 驗證是否成功添加到模擬存儲
-        XCTAssertTrue(favoriteController.isFavorite(trackId: Int(trackId)), "Expected track to be favorite")
+        XCTAssertTrue(favoriteController.isFavorite(trackId: 123), "Expected track to be favorite")
 
     }
     
     func testFetchFavoriteData() {
-            // 添加測試數據到模擬的 Core Data 存儲
-            let context = mockPersistentContainer.viewContext
-            let musicFavorite = MusicFavorite(context: context)
-            musicFavorite.trackId = 123
-            musicFavorite.trackName = "Test Track"
-            try? context.save()
-
-            // 執行 fetchFavoriteData
-            viewController.fetchFavoriteData()
-
-            // 驗證 fetchedResultsController 的結果是否包含測試數據
-            let fetchedObjects = viewController.fetchResultController.fetchedObjects
-            XCTAssertEqual(fetchedObjects?.count, 1)
-            XCTAssertEqual(fetchedObjects?.first?.trackName, "Test Track")
-    }
-    
-    func testisFavorite() {
         
+        // 添加測試數據到模擬的 Core Data 存儲
+        let context = mockPersistentContainer.viewContext
+        let musicFavorite = MusicFavorite(context: context)
+        musicFavorite.trackId = 123
+        musicFavorite.trackName = "Test Track"
+        try? context.save()
+
+        // 執行 fetchFavoriteData
+        viewController.fetchFavoriteData()
+
+        // 驗證 fetchedResultsController 的結果是否包含測試數據
+        let fetchedObjects = viewController.fetchResultController.fetchedObjects
+        XCTAssertEqual(fetchedObjects?.count, 13)
+        XCTAssertEqual(fetchedObjects?.first?.trackName, "Test Track")
     }
     
     func testremoveFromFavorite() {
+        // 初始化 FavoriteController 實例
+        let favoriteController = FavoriteController()
         
+        favoriteController.removeFromFavorite(trackId: 123)
+        // 調用 isFavorite 方法，驗證是否返回 false
+        XCTAssertFalse(favoriteController.isFavorite(trackId: 123), "Expected track not to be favorite")
     }
 }
