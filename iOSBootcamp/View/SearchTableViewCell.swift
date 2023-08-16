@@ -12,23 +12,23 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var CoverImageView: UIImageView!
     @IBOutlet weak var TrackNameLabel: UILabel! {
         didSet {
-            TrackNameLabel.numberOfLines = 0
+            TrackNameLabel.numberOfLines = 1
         }
     }
     @IBOutlet weak var ArtistNameLabel: UILabel! {
         didSet {
-            ArtistNameLabel.numberOfLines = 0
+            ArtistNameLabel.numberOfLines = 1
         }
     }
     @IBOutlet weak var DescriptionLabel: UILabel! {
         didSet {
-            DescriptionLabel.numberOfLines = 0
+            DescriptionLabel.numberOfLines = 2
         }
     }
     @IBOutlet weak var FavoriteButton: UIButton!
     @IBOutlet weak var CollectionName: UILabel! {
         didSet {
-            CollectionName.numberOfLines = 0
+            CollectionName.numberOfLines = 1
         }
     }
     @IBOutlet weak var TimeLabel: UILabel!

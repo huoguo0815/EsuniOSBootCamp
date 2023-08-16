@@ -134,14 +134,8 @@ class SearchViewController: UIViewController, UITableViewDelegate {
             if lastTappedIndexPath.section == 0 {
                 itemResults = movieitems[lastTappedIndexPath.row]
                 if itemResults.isFullDescriptionVisible {
-                    let descriptionLabelHeight = itemResults.description.height(withConstrainedWidth: tableView.bounds.width - 40, font: UIFont.systemFont(ofSize: 17))
-                        return 200 + descriptionLabelHeight
-                }
-            } else {
-                itemResults = musicitems[lastTappedIndexPath.row]
-                if itemResults.isFullDescriptionVisible {
-                    let descriptionLabelHeight = itemResults.description.height(withConstrainedWidth: tableView.bounds.width - 40, font: UIFont.systemFont(ofSize: 17))
-                        return 200 + descriptionLabelHeight
+                    let descriptionLabelHeight = itemResults.description.height(withConstrainedWidth: tableView.bounds.width - 40, font: UIFont.systemFont(ofSize: 20))
+                        return 350 + descriptionLabelHeight
                 }
             }
             
@@ -252,6 +246,12 @@ class SearchViewController: UIViewController, UITableViewDelegate {
                         cell.DescriptionLabel.isHidden = false
                         cell.DescriptionLabel.text = itemResults.description
                         cell.DescriptionLabel.sizeToFit()
+                    }
+                    
+                    if itemResults.isFullDescriptionVisible {
+                        cell.DescriptionLabel.numberOfLines = 0
+                    } else {
+                        cell.DescriptionLabel.numberOfLines = 2
                     }
                     
                     //透過SDWebImage配置照片
@@ -462,6 +462,11 @@ extension SearchViewController: SearchDelegate {
             var itemResults: SearchItem
             if indexPath.section == 0 {
                 itemResults = movieitems[indexPath.row]
+                if itemResults.isFullDescriptionVisible {
+                    cell.DescriptionLabel.numberOfLines = 0
+                } else {
+                    cell.DescriptionLabel.numberOfLines = 2
+                }
                 itemResults.isFullDescriptionVisible.toggle()
                 movieitems[indexPath.row].isFullDescriptionVisible = itemResults.isFullDescriptionVisible
             } else {
